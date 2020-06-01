@@ -50,7 +50,7 @@
   async function create() {
     const svelteCSS = await axios.get("/build/bundle.css");
     const o = await axios.post(
-      "http://localhost:3000/",
+      "https://bbresume-backend.herokuapp.com/",
       {
         content: content.innerHTML,
         css: svelteCSS.data
