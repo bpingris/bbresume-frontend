@@ -1,0 +1,68 @@
+{
+  "name":"Jon Doe",
+  "photo":"http://placehold.it/180",
+  "position":"CEO of the world",
+  "contact":{
+    "email":"jon.doe@example.com",
+    "phone":"06 01 02 03 04",
+    "github":{
+      "alt":"github",
+      "link":"github.com"
+    },
+    "linkedin":{
+      "alt":"linkedin",
+      "link":"linkedin.com"
+    }
+  },
+  "description":"Hey yo idk what to write here help",
+  "language":"en",
+  "skills":[
+    "svelte",
+    "vue",
+    "nuxt",
+    "golang",
+    "node",
+    "C/C++",
+    "typescript",
+    "flutter"
+  ],
+  "hobbies":[
+    "Technologies",
+    "Skate",
+    "Netflix",
+    "BLM"
+  ],
+  "experiences":[
+    {
+      "name":"Company",
+      "job":"Fullstack dev",
+      "period":"2015-2021",
+      "description":[
+        "blabla",
+        "bliblou"
+      ]
+    },
+    {
+      "name":"Company",
+      "job":"Fullstack dev",
+      "period":"Octobre 2018 - Mars 2019",
+      "description":[
+        "yoyo"
+      ]
+    }
+  ],
+  "formations":[
+    {
+      "diploma":"Master of something",
+      "name":"A school",
+      "period":"2015",
+      "description":"Things"
+    },
+    {
+      "diploma":"Another diploma",
+      "name":"Hello",
+      "period":"2015-2021",
+      "description":"wowo"
+    }
+  ]
+}
