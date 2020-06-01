@@ -1,11 +1,12 @@
 <script>
-  import axios from "axios";
-  import { get } from "svelte/store";
-  import { user } from "./store/user";
-  import { dictionary, locale, _ } from "svelte-i18n";
   import { onMount, setContext } from "svelte";
+  import { get } from "svelte/store";
+  import { dictionary, locale, _ } from "svelte-i18n";
+  import { user } from "./store/user";
+  import { content } from "./store/content";
   import Contact from "./components/Contact.svelte";
   import Config from "./components/Config/Config.svelte";
+  import Controls from "./components/Controls.svelte";
 
   dictionary.set({
     en: {
@@ -23,7 +24,6 @@
       formation: "Formations"
     }
   });
-  locale.set("en");
 
   let show = false;
 
@@ -35,33 +35,8 @@
   $: experiences = $user.experiences;
   $: formations = $user.formations;
 
-  let content;
+  $: locale.set($user.language || "en");
 
-  function save(response) {
-    const url = window.URL.createObjectURL(new Blob([response.data]));
-    const link = document.createElement("a");
-    link.href = url;
-    link.setAttribute("download", "bbresume.pdf"); //or any other extension
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-  }
-
-  async function create() {
-    const svelteCSS = await axios.get("/build/bundle.css");
-    const o = await axios.post(
-      "https://bbresume-backend.herokuapp.com/",
-      {
-        content: content.innerHTML,
-        css: svelteCSS.data
-      },
-      {
-        headers: { Accept: "application/pdf" },
-        responseType: "arraybuffer"
-      }
-    );
-    save(o);
-  }
 </script>
 
 <style>
@@ -75,16 +50,9 @@
   }
 </style>
 
-<Config bind:show />
-<button on:click={create}>Create</button>
-<button
-  class="fixed bottom-0 right-0 rounded-full p-5 bg-green-500 text-white w-24
-  h-24 mr-5 mb-5 shadow"
-  on:click={() => (show = true)}>
-  Config
-</button>
+<Controls />
 
-<div bind:this={content}>
+<div bind:this={$content}>
   <div class="resume bg-gray-300 flex">
     {#if user}
       <section class="w-1/3 bg-gray-900 h-full shadow-lg">

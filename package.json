@@ -18,8 +18,10 @@
   "dependencies": {
     "@rollup/plugin-json": "^4.0.3",
     "axios": "^0.19.2",
+    "compressed-json": "^1.0.15",
     "sirv-cli": "^0.4.4",
     "svelte-i18n": "^3.0.3",
-    "svelte-icons": "^2.1.0"
+    "svelte-icons": "^2.1.0",
+    "svelte-portal": "^0.1.0"
   }
 }

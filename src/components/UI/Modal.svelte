@@ -1,4 +1,5 @@
 <script>
+  import Portal from "svelte-portal";
   import { fade, fly } from "svelte/transition";
   export let show = false;
 
@@ -36,10 +37,12 @@
 </style>
 
 {#if show}
-  <div transition:fade={{ duration: 150 }} class="modal">
-    <div class="background" on:click={handleBgClick} />
-    <div transition:fly={{ y: 50 }} class="content">
-      <slot />
+  <Portal target={document.body}>
+    <div transition:fade={{ duration: 150 }} class="modal">
+      <div class="background" on:click={handleBgClick} />
+      <div transition:fly={{ y: 50 }} class="content">
+        <slot />
+      </div>
     </div>
-  </div>
+  </Portal>
 {/if}
