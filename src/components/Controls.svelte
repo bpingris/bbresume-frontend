@@ -1,5 +1,4 @@
 <script>
-  import cjson from "compressed-json";
   import axios from "axios";
   import GoGear from "svelte-icons/go/GoGear.svelte";
   import FaFileExport from "svelte-icons/fa/FaFileExport.svelte";
@@ -31,10 +30,10 @@
       const svelteCSS = await axios.get("/build/bundle.css");
       const o = await axios.post(
         "https://bbresume-backend.herokuapp.com/",
-        cjson.compress({
+        {
           content: $content.innerHTML,
           css: svelteCSS.data
-        }),
+        },
         {
           headers: { Accept: "application/pdf" },
           responseType: "arraybuffer"
