@@ -1,6 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  import { user } from "../store/user";
+  import { user } from "../../store/user";
   import IoLogoGithub from "svelte-icons/io/IoLogoGithub.svelte";
   import FaLinkedin from "svelte-icons/fa/FaLinkedin.svelte";
   import IoMdMail from "svelte-icons/io/IoMdMail.svelte";

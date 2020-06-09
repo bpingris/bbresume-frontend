@@ -1,64 +1,24 @@
 <script>
-  import { Router } from "svelte-router-spa";
+  import { get } from "svelte/store";
+  import { _ } from "svelte-i18n";
+  import { user } from "../../store/user";
+  import { content } from "../../store/content";
+  import Contact from "../../components/material/Contact.svelte";
+  
 
-  import { routes } from './router'
-// import { onMount, setContext } from "svelte";
-//   import { get } from "svelte/store";
-//   import { dictionary, locale, _ } from "svelte-i18n";
-//   import { user } from "./store/user";
-//   import { content } from "./store/content";
-//   import Contact from "./components/material/Contact.svelte";
-//   import Config from "./components/Config/Config.svelte";
-//   import Controls from "./components/Controls.svelte";
+  let show = false;
 
-//   dictionary.set({
-//     en: {
-//       contact: "Contact",
-//       skills: "Skills",
-//       hobbies: "Hobbies",
-//       experiences: "Experiences",
-//       formation: "Formations"
-//     },
-//     fr: {
-//       contact: "Contact",
-//       skills: "compétences",
-//       hobbies: "Loisirs",
-//       experiences: "Expériences",
-//       formation: "Formations"
-//     }
-//   });
-
-//   let show = false;
-
-//   onMount(() => locale.set($user.language));
-
-//   $: contact = $user.contact;
-//   $: skills = $user.skills;
-//   $: hobbies = $user.hobbies;
-//   $: experiences = $user.experiences;
-//   $: formations = $user.formations;
-
-//   $: locale.set($user.language || "en");
+  $: contact = $user.contact;
+  $: skills = $user.skills;
+  $: hobbies = $user.hobbies;
+  $: experiences = $user.experiences;
+  $: formations = $user.formations;
 
 </script>
-<!-- 
-<style>
-  .resume {
-    position: relative;
-    width: 21cm;
-    height: 29.68cm;
-    page-break-after: auto;
-    overflow: hidden;
-    font-family: "Roboto", sans-serif;
-  }
-</style> -->
 
-<Router {routes} />
 
-<!-- <Controls />
-
-<div bind:this={$content}>
-  <div class="resume bg-gray-300 flex">
+<div bind:this={$content} class="h-full">
+  <div class="bg-gray-300 flex h-full">
     {#if user}
       <section class="w-1/3 bg-gray-900 h-full shadow-lg">
         <div class="py-8">
@@ -161,4 +121,4 @@
       </section>
     {/if}
   </div>
-</div> -->
+</div>

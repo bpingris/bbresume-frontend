@@ -1,14 +1,18 @@
 <script>
   import axios from "axios";
+  import { createEventDispatcher } from "svelte";
   import GoGear from "svelte-icons/go/GoGear.svelte";
   import FaFileExport from "svelte-icons/fa/FaFileExport.svelte";
   import FaCircleNotch from "svelte-icons/fa/FaCircleNotch.svelte";
   import Config from "./Config/Config.svelte";
   import Language from "./Config/Language.svelte";
   import { content } from "../store/content";
+  import IoIosCloseCircle from "svelte-icons/io/IoIosCloseCircle.svelte";
 
   let show = false;
   let loading = false;
+  const dispatch = createEventDispatcher();
+
   function openConfig() {
     show = true;
   }
@@ -32,11 +36,11 @@
         "https://bbresume-backend.herokuapp.com/",
         {
           content: $content.innerHTML,
-          css: svelteCSS.data
+          css: svelteCSS.data,
         },
         {
           headers: { Accept: "application/pdf" },
-          responseType: "arraybuffer"
+          responseType: "arraybuffer",
         }
       );
       save(o);
@@ -82,7 +86,13 @@
 
 <Config bind:show />
 
-<div class="fixed bottom-0 right-0 flex flex-col mb-4 mr-4">
+<div class="fixed z-10 bottom-0 right-0 flex flex-col mb-4 mr-4">
+  <button
+    title="Close the resume"
+    class="tile-btn bg-red-500 hover:bg-red-600"
+    on:click={() => dispatch('close')}>
+    <IoIosCloseCircle />
+  </button>
   <Language />
   <button
     title="Export to PDF"
