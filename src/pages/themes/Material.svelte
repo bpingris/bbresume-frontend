@@ -1,12 +1,8 @@
 <script>
-  import { get } from "svelte/store";
   import { _ } from "svelte-i18n";
   import { user } from "../../store/user";
   import { content } from "../../store/content";
   import Contact from "../../components/material/Contact.svelte";
-  
-
-  let show = false;
 
   $: contact = $user.contact;
   $: skills = $user.skills;
@@ -17,7 +13,13 @@
 </script>
 
 
-<div bind:this={$content} class="h-full">
+<style>
+.roboto {
+  font-family: "Roboto", sans-serif;
+}
+</style>
+
+<div bind:this={$content} class="h-full roboto">
   <div class="bg-gray-300 flex h-full">
     {#if user}
       <section class="w-1/3 bg-gray-900 h-full shadow-lg">

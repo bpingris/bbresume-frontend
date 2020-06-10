@@ -3,8 +3,8 @@
   import { themes } from "./themes";
   import Controls from "../components/Controls.svelte";
 
-  let selectedTemplate = null;
-  let open = false;
+  let selectedTemplate = themes[1].cmp;
+  let open = true;
 
   function setTemplate(t) {
     selectedTemplate = t;
@@ -19,7 +19,6 @@
     height: 29.68cm;
     page-break-after: auto;
     overflow: hidden;
-    font-family: "Roboto", sans-serif;
     top: 0;
     left: 0;
     right: 0;
