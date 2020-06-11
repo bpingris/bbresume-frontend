@@ -1,16 +1,18 @@
 {
-  "name":"Jon Doe",
+  "name":"Richard Sampson",
+  "firstname": "Richard",
+  "lastname": "Sampson",
   "photo":"http://placehold.it/180",
   "position":"CEO of the world",
   "contact":{
-    "email":"jon.doe@example.com",
+    "email":"richard.sampson@example.com",
     "phone":"06 01 02 03 04",
     "github":{
-      "alt":"github",
+      "alt":"github.richard.sampson",
       "link":"github.com"
     },
     "linkedin":{
-      "alt":"linkedin",
+      "alt":"linkedin.richard.sampson",
       "link":"linkedin.com"
     }
   },

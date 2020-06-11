@@ -38,13 +38,11 @@
 
 <div class="min-h-screen flex justify-center items-center flex-col space-y-4">
   <div class="text-5xl font-thin px-4 text-center">Chose a template, then modify it, finally download your resume !</div>
-  <div>
+  <div class="flex flex-wrap justify-center items-center w-full">
     {#each themes as theme}
-      <div
-        class="hover:shadow-xl transition-shadow duration-150 cursor-pointer
-        h-full"
-        on:click={() => setTemplate(theme.cmp)}>
-        <img class="w-48" src="/assets/{theme.preview}" alt="" />
+      <div class="w-full sm:w-1/2 md:w-1/3 flex flex-col items-center justify-center my-2 h-full">
+        <img on:click={() => setTemplate(theme.cmp)} class="w-56 hover:shadow-xl transition-shadow duration-150 cursor-pointer" src="/assets/{theme.preview}" alt="" />
+        <div class="text-xl font-thin">{theme.title}</div>
       </div>
     {/each}
   </div>

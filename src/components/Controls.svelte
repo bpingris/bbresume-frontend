@@ -33,7 +33,7 @@
     try {
       const svelteCSS = await axios.get("/build/bundle.css");
       const o = await axios.post(
-        "https://bbresume-backend.herokuapp.com/",
+        process.env.API_ENDPOINT,
         {
           content: $content.innerHTML,
           css: svelteCSS.data,
@@ -86,7 +86,7 @@
 
 <Config bind:show />
 
-<div class="fixed z-10 bottom-0 right-0 flex flex-col mb-4 mr-4">
+<div class="fixed z-10 bottom-0 right-0 flex flex-col mb-4 mr-4 z-40">
   <button
     title="Close the resume"
     class="tile-btn bg-red-500 hover:bg-red-600"

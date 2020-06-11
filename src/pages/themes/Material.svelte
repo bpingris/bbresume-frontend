@@ -19,8 +19,8 @@
 }
 </style>
 
-<div bind:this={$content} class="h-full roboto">
-  <div class="bg-gray-300 flex h-full">
+<div bind:this={$content} class="h-full">
+  <div class="bg-gray-300 flex h-full roboto">
     {#if user}
       <section class="w-1/3 bg-gray-900 h-full shadow-lg">
         <div class="py-8">
