@@ -1,7 +1,9 @@
 <script>
   import Portal from "svelte-portal";
   import { fade, fly } from "svelte/transition";
+  let className = "";
   export let show = false;
+  export { className as class };
 
   function handleBgClick() {
     show = false;
@@ -40,7 +42,7 @@
   <Portal target={document.body}>
     <div transition:fade={{ duration: 150 }} class="modal">
       <div class="background" on:click={handleBgClick} />
-      <div transition:fly={{ y: 50 }} class="content">
+      <div transition:fly={{ y: 50 }} class="content {className}">
         <slot />
       </div>
     </div>

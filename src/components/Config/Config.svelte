@@ -13,7 +13,7 @@ import { user } from "../../store/user";
   let name = "Jon Doe";
 </script>
 
-<Modal bind:show>
+<Modal class="w-5/6" bind:show>
   <div class="bg-white rounded shadow p-5">
     <Basics />
     <Skills />
