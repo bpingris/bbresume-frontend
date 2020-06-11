@@ -45,6 +45,7 @@
       );
       save(o);
     } catch (error) {
+      console.log(error)
       alert("Oopsi!");
     } finally {
       loading = false;
