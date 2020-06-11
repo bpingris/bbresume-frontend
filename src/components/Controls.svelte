@@ -30,11 +30,11 @@
   async function download() {
     if (loading) return;
     loading = true;
-    console.log(process.env.API_ENDPOINT)
+    // console.log(process.env.API_ENDPOINT)
     try {
       const svelteCSS = await axios.get("/build/bundle.css");
       const o = await axios.post(
-        process.env.API_ENDPOINT,
+        "https://bbresume-backend.herokuapp.com/",
         {
           content: $content.innerHTML,
           css: svelteCSS.data,
