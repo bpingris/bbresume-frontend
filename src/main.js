@@ -27,4 +27,6 @@ const app = new App({
 	target: document.body
 });
 
+console.log(process.env.API_ENDPOINT)
+
 export default app;
