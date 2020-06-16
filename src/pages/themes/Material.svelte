@@ -51,7 +51,7 @@
           </div>
           <div class="w-4/5 h-1 bg-gray-300 ml-auto" />
         </div>
-        <div class="capitalize text-gray-300 font-light text-lg ml-5 ">
+        <div class="text-gray-300 font-light text-lg ml-5 ">
           {#each skills as s}
             <div class="flex items-center my-2">
               <div>{s}</div>
@@ -68,7 +68,7 @@
           </div>
           <div class="w-4/5 h-1 bg-gray-300 ml-auto" />
         </div>
-        <div class="capitalize ml-5 text-lg font-light text-gray-300">
+        <div class="ml-5 text-lg font-light text-gray-300">
           {#each hobbies as h}
             <div class="my-2">{h}</div>
           {/each}
@@ -76,8 +76,8 @@
 
       </section>
       <section class="w-2/3 text-gray-900">
-        {#if $user.name}
-          <p class="text-5xl text-center mt-6 font-thin">{$user.name}</p>
+        {#if $user.firstname && $user.lastname}
+          <p class="text-5xl text-center mt-6 font-thin">{$user.firstname} {$user.lastname}</p>
         {/if}
         {#if $user.position}
           <p class="text-center font-light text-2xl mb-4">{$user.position}</p>

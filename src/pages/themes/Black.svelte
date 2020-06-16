@@ -39,15 +39,14 @@
       <span class="font-medium">{$user.lastname}</span>
     </div>
     <div class="w-full my-4" style="height: 4px; background-color: #242424" />
+    {#if $user.description}
     <div class="flex">
       <div class="w-3/12 yellow uppercase text-3xl">Profile</div>
       <div class="w-9/12 text-white font-sans">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea sint
-        corrupti itaque exercitationem temporibus doloremque reiciendis ipsam
-        excepturi similique labore quis soluta, aspernatur unde a! Quibusdam,
-        saepe. Labore, laboriosam repellat!
+        {$user.description}
       </div>
     </div>
+    {/if}
     <div class="text-dark bg-yellow p-2 flex justify-around my-5">
       {#if contact.phone}
         <span>{contact.phone}</span>
