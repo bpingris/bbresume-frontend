@@ -9,14 +9,12 @@
   $: hobbies = $user.hobbies;
   $: experiences = $user.experiences;
   $: formations = $user.formations;
-
 </script>
 
-
 <style>
-.roboto {
-  font-family: "Roboto", sans-serif;
-}
+  .roboto {
+    font-family: "Roboto", sans-serif;
+  }
 </style>
 
 <div bind:this={$content} class="h-full">
@@ -77,7 +75,9 @@
       </section>
       <section class="w-2/3 text-gray-900">
         {#if $user.firstname && $user.lastname}
-          <p class="text-5xl text-center mt-6 font-thin">{$user.firstname} {$user.lastname}</p>
+          <p class="text-5xl text-center mt-6 font-thin">
+            {$user.firstname} {$user.lastname}
+          </p>
         {/if}
         {#if $user.position}
           <p class="text-center font-light text-2xl mb-4">{$user.position}</p>
@@ -91,15 +91,15 @@
           </div>
           <div>
             {#each experiences as e}
-              <div class="w-full p-8 bg-white rounded shadow my-2 text-sm">
+              <div class="w-full p-5 bg-white rounded shadow my-2 text-sm">
                 <div>
                   <span>{e.job}</span>
                   | {e.name}
                 </div>
-                <div class="text-gray-700">{e.period}</div>
-                <div>
+                <div class="text-gray-600 text-xs">{e.period}</div>
+                <div class="text-gray-700">
                   {#each e.description as d}
-                    <div class="text-gray-600">{d}</div>
+                    <div>- {d}</div>
                   {/each}
                 </div>
               </div>
@@ -111,9 +111,13 @@
             </div>
             <div>
               {#each formations as f}
-                <div class="w-full p-8 bg-white rounded shadow my-2">
+                <div class="w-full p-5 bg-white rounded shadow my-2">
                   <div>{f.diploma}</div>
-                  <div>{f.period} - {f.name}</div>
+                  <div>
+                    {#if f.period}{f.period}{/if}
+                    {#if f.period && f.name}-{/if}
+                    {#if f.name}{f.name}{/if}
+                  </div>
                   <div>{f.description}</div>
                 </div>
               {/each}
