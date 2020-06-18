@@ -91,15 +91,15 @@
           </div>
           <div>
             {#each experiences as e}
-              <div class="w-full p-8 bg-white rounded shadow my-2">
+              <div class="w-full p-8 bg-white rounded shadow my-2 text-sm">
                 <div>
                   <span>{e.job}</span>
                   | {e.name}
                 </div>
-                <div class="text-gray-700 text-sm">{e.period}</div>
+                <div class="text-gray-700">{e.period}</div>
                 <div>
                   {#each e.description as d}
-                    <div>{d}</div>
+                    <div class="text-gray-600">{d}</div>
                   {/each}
                 </div>
               </div>
