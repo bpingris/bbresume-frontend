@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@rollup/plugin-json": "^4.0.3",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "compressed-json": "^1.0.15",
     "sirv-cli": "^0.4.4",
     "svelte-i18n": "^3.0.3",
